@@ -1,6 +1,17 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~>4.71.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "~>3.0"
+    }
+  }
+}
 
-# Create a resource group using the generated random name
-resource "azurerm_resource_group" "this" {
-  location = "canadacentral"
-  name     = "test-cac-rg"
+provider "azurerm" {
+  features {}
+
 }
